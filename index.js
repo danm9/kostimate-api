@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import userRoutes from "./src/routes/userRoutes.js";
+import projectRoutes from "./src/routes/projectRoutes.js";
 import cors from "cors";
 
 const app = express();
@@ -30,6 +31,7 @@ app.use(bodyParser.json());
 
 // Add Routes
 userRoutes(app);
+projectRoutes(app);
 
 app.get("/", (req, res) =>
   res.send(`Node and express server running on port ${port}`)
